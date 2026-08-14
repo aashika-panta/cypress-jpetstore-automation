@@ -14,7 +14,7 @@ export const selector = {
   country: '[name="account.country"]',
   languages: '[name="account.languagePreference"]',
   category: '[name="account.favouriteCategoryId"]',
-  saveinformation: '[name="newAccount"]'
+  saveinformation: '[name="newAccount"]',
 };
 
 export const loginSelector = {
@@ -22,4 +22,23 @@ export const loginSelector = {
   username_field: '[name="username"]',
   password_field: '[name="password"]',
   login_button: '[name="signon"]',
+};
+
+export const cartSelector = {
+  fish: "//img[@src='../images/sm_fish.gif']",
+  fishProduct: "//a[normalize-space()='FI-SW-01']",
+  FishaddToCart: "//tbody/tr[2]/td[5]",
+
+  returnToMainMenu: "//a[normalize-space()='Return to Main Menu']",
+
+  reptiles: "//img[@src='../images/sm_reptiles.gif']",
+  reptileProduct: "//a[normalize-space()='RP-SN-01']",
+  reptileAddToCart: "//tbody/tr[2]/td[5]/a[1]",
+
+  cart: "//img[@name='img_cart']",
+
+  removeProduct: "//tbody/tr[2]/td[8]/a[1]",
+
+  quantity: '[name ="EST-1"]',
+  updateCart: '[name ="updateCartQuantities"]',
 };

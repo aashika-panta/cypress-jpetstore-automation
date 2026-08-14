@@ -16,3 +16,10 @@ export const selector = {
   category: '[name="account.favouriteCategoryId"]',
   saveinformation: '[name="newAccount"]'
 };
+
+export const loginSelector = {
+  sign_in: "//a[normalize-space()='Sign In']",
+  username_field: '[name="username"]',
+  password_field: '[name="password"]',
+  login_button: '[name="signon"]',
+};

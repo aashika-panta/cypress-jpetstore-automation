@@ -1,10 +1,16 @@
 import { cartSelector } from "../support/selector";
-
 describe("Add to cart functionality", () => {
   beforeEach(() => {
     cy.visit("https://petstore.octoperf.com/actions/Catalog.action");
   });
 
+  afterEach(function () {
+    if (this.currentTest.state === "failed") {
+      cy.log("failed " + this.currentTest.title);
+    } else {
+      cy.log("passed " + this.currentTest.title);
+    }
+  });
   it("verify user should add aproduct to the cart", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
@@ -66,8 +72,7 @@ describe("Add to cart functionality", () => {
 
     cy.get("body").should("contain.text", "EST-1");
   });
-
-  it("verify user should decrease to neg product quantity", () => {
+  it("verify user handle neg product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();

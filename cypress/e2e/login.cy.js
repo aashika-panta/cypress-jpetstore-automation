@@ -2,7 +2,7 @@ import { loginSelector } from "../support/selector";
 
 describe("validate login functionality", () => {
   beforeEach(() => {
-    cy.visit("https://petstore.octoperf.com/actions/Catalog.action");
+    cy.visit("/");
   });
 
   afterEach(() => {
@@ -10,12 +10,13 @@ describe("validate login functionality", () => {
   });
 
   it("verify login with valid credential", () => {
-    cy.login("aaa", "123456789");
+    cy.login();
     cy.get("body").should("contain.text", "aashika");
     cy.log("logged in with valid credential");
   });
 
   it("verify login with invalid credential", () => {
+    cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field).type("aa");
     cy.get(loginSelector.password_field).clear().type("56789");
@@ -25,6 +26,7 @@ describe("validate login functionality", () => {
   });
 
   it("verify login with empty credential", () => {
+    cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field);
     cy.get(loginSelector.password_field).clear();
@@ -34,6 +36,7 @@ describe("validate login functionality", () => {
   });
 
   it("verify logout with valid user", () => {
+    cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field).type("aaa");
     cy.get(loginSelector.password_field).clear().type("123456789");

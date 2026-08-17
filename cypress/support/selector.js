@@ -18,6 +18,7 @@ export const selector = {
 };
 
 export const loginSelector = {
+  enter_store: "//a[normalize-space()='Enter the Store']",
   sign_in: "//a[normalize-space()='Sign In']",
   username_field: '[name="username"]',
   password_field: '[name="password"]',
@@ -41,4 +42,20 @@ export const cartSelector = {
 
   quantity: '[name ="EST-1"]',
   updateCart: '[name ="updateCartQuantities"]',
+};
+export const checkout = {
+  checkoutprocess: "//a[normalize-space()='Proceed to Checkout']",
+  cardtype: '[name ="order.cardType"]',
+  cardnumber: '[name ="order.creditCard"]',
+  expirydate: '[name="order.expiryDate"]',
+  first_name: '[name ="order.billToFirstName"]',
+  last_name: '[name ="order.billToLastName"]',
+  Address1: '[name ="order.billAddress1"]',
+  Address2: '[name ="order.billAddress2"]',
+  city: '[name ="order.billCity"]',
+  state: '[name ="order.billState"]',
+  Zip: '[name ="order.billZip"]',
+  Country: '[name ="order.billCountry"]',
+  continue: "//input[@value='Continue']",
+  confirm: "//a[normalize-space()='Confirm']",
 };

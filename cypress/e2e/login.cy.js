@@ -6,8 +6,9 @@ describe("validate login functionality", () => {
   });
 
   afterEach(() => {
-    cy.log("Test execution completed");
+    cy.log("Test execution  completed ");
   });
+  //test cases
 
   it("Verify login with valid credential", () => {
     cy.login();

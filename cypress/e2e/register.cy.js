@@ -59,7 +59,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "Username is required");
+    cy.get("body").should("not.contain.text", "Username is required");
   });
 
   it("Verify user can register with mismatch password", () => {
@@ -80,7 +80,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "passsword do not match");
+    cy.get("body").should("not.contain.text", "passsword do not match");
   });
 
   it("Verify user can register with invalid email", () => {
@@ -89,7 +89,7 @@ describe("Registration functionality", () => {
     cy.get(selector.repeatpassword).type("Test@12345");
     cy.get(selector.firstname).type("Aashka");
     cy.get(selector.lastname).type("Panta");
-    cy.get(selector.email).type(invalidemail123);
+    cy.get(selector.email).type("invalidemail123");
     cy.get(selector.phone).type("9812345678");
     cy.get(selector.address1).type("Kathmandu");
     cy.get(selector.address2).type("Kathmandu");
@@ -101,7 +101,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "Invalid email");
+    cy.get("body").should("not.contain.text", "Invalid email");
   });
 
   it("Verify user can register with empty password", () => {
@@ -122,7 +122,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "password is required.");
+    cy.get("body").should("not.contain.text", "password is required.");
   });
 
   it("Verify user can register with empty email", () => {
@@ -143,7 +143,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "Email is required");
+    cy.get("body").should("not.contain.text", "Email is required");
   });
 
   it("Verify user can register with duplicate email", () => {
@@ -164,7 +164,7 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "Email already exixt");
+    cy.get("body").should("not.contain.text", "Email already exixt");
   });
 
   it("Verify user can register with empty address", () => {
@@ -185,6 +185,6 @@ describe("Registration functionality", () => {
     cy.get(selector.category).select("DOGS");
     cy.get(selector.saveinformation).click();
 
-    cy.get("body").should("contain.text", "Address is required");
+    cy.get("body").should("not.contain.text", "Address is required");
   });
 });

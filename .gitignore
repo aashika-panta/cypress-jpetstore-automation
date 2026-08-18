@@ -1,5 +1,5 @@
 node_modules/
 cypress/screenshots/
-cypress/videos/
 .env
 .gitignore
+cypress/reports/

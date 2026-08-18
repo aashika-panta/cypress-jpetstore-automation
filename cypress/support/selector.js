@@ -59,3 +59,8 @@ export const checkout = {
   continue: "//input[@value='Continue']",
   confirm: "//a[normalize-space()='Confirm']",
 };
+
+export const searchs = {
+  search: "[name='keyword']",
+  searchproduct: "[name='searchProducts']"
+};

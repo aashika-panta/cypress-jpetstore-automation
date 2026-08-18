@@ -11,7 +11,7 @@ describe("Add to cart functionality", () => {
       cy.log("passed " + this.currentTest.title);
     }
   });
-  it("verify user should add aproduct to the cart", () => {
+  it("Verify user should add aproduct to the cart", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -19,7 +19,7 @@ describe("Add to cart functionality", () => {
     cy.get("body").should("contain.text", "Shopping Cart");
   });
 
-  it("verify user should add aproduct to the cart", () => {
+  it("Verify user should add aproduct to the cart", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -33,7 +33,7 @@ describe("Add to cart functionality", () => {
     cy.get("body").should("contain.text", "EST-11");
   });
 
-  it("verify user should remove product from the cart", () => {
+  it("Verify user should remove product from the cart", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -45,7 +45,7 @@ describe("Add to cart functionality", () => {
     cy.get("body").should("not.contain.text", "EST-1");
   });
 
-  it("verify user should increase product quantity", () => {
+  it("Verify user should increase product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -59,7 +59,7 @@ describe("Add to cart functionality", () => {
     cy.get(cartSelector.quantity).should("have.value", "2");
   });
 
-  it("verify user should decrease product quantity", () => {
+  it("Verify user should decrease product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -72,7 +72,7 @@ describe("Add to cart functionality", () => {
 
     cy.get("body").should("contain.text", "EST-1");
   });
-  it("verify user handle neg product quantity", () => {
+  it("Verify user handle neg product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -86,7 +86,7 @@ describe("Add to cart functionality", () => {
     cy.get("body").should("not.contain.text", "EST-1");
   });
 
-  it("verify user should enter 0 product quantity", () => {
+  it("Verify user should enter 0 product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
     cy.xpath(cartSelector.FishaddToCart).click();
@@ -100,7 +100,7 @@ describe("Add to cart functionality", () => {
     cy.get("body").should("not.contain.text", "EST-1");
   });
 
-  it("verify user should non numeric product quantity", () => {
+  it("Verify user should non numeric product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
 

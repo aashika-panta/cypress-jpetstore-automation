@@ -14,7 +14,7 @@ describe("Jpetstore checkout functionality", () => {
     cy.xpath(checkout.checkoutprocess).click();
   });
 
-  it("verify users can checkout successfully", () => {
+  it("Verify users can checkout successfully", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
     cy.get(checkout.expirydate).clear().type("12/03");
@@ -34,7 +34,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
-  it("verify checkout should not proceed with empty first name", () => {
+  it("Verify checkout should not proceed with empty first name", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
     cy.get(checkout.expirydate).clear().type("12/03");
@@ -55,7 +55,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
-  it("verify checkout should not proceed with empty card number", () => {
+  it("Verify checkout should not proceed with empty card number", () => {
     cy.get(checkout.cardtype).select("Visa");
 
     cy.get(checkout.cardnumber).clear();
@@ -74,7 +74,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
-  it("verify checkout should not proceed with empty last name", () => {
+  it("Verify checkout should not proceed with empty last name", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
     cy.get(checkout.expirydate).clear().type("12/03");
@@ -95,7 +95,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
-  it("verify checkout accepts alphabetic zip code", () => {
+  it("Verify checkout accepts alphabetic zip code", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
     cy.get(checkout.expirydate).clear().type("12/03");

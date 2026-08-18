@@ -20,7 +20,7 @@ describe("Registration functionality", () => {
     }
   });
 
-  it("verify user can register successfully", () => {
+  it("Verify user can register successfully", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");
@@ -41,7 +41,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "Sign In");
   });
 
-  it("verify user can register with empty Username", () => {
+  it("Verify user can register with empty Username", () => {
     cy.get(selector.username_field);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");
@@ -62,7 +62,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "Username is required");
   });
 
-  it("verify user can register with mismatch password", () => {
+  it("Verify user can register with mismatch password", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test12345");
@@ -83,7 +83,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "passsword do not match");
   });
 
-  it("verify user can register with invalid email", () => {
+  it("Verify user can register with invalid email", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");
@@ -104,7 +104,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "Invalid email");
   });
 
-  it("verify user can register with empty password", () => {
+  it("Verify user can register with empty password", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field);
     cy.get(selector.repeatpassword);
@@ -125,7 +125,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "password is required.");
   });
 
-  it("verify user can register with empty email", () => {
+  it("Verify user can register with empty email", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");
@@ -146,7 +146,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "Email is required");
   });
 
-  it("verify user can register with duplicate email", () => {
+  it("Verify user can register with duplicate email", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");
@@ -167,7 +167,7 @@ describe("Registration functionality", () => {
     cy.get("body").should("contain.text", "Email already exixt");
   });
 
-  it("verify user can register with empty address", () => {
+  it("Verify user can register with empty address", () => {
     cy.get(selector.username_field).type(username);
     cy.get(selector.password_field).type("Test@12345");
     cy.get(selector.repeatpassword).type("Test@12345");

@@ -9,13 +9,13 @@ describe("validate login functionality", () => {
     cy.log("Test execution completed");
   });
 
-  it("verify login with valid credential", () => {
+  it("Verify login with valid credential", () => {
     cy.login();
     cy.get("body").should("contain.text", "aashika");
     cy.log("logged in with valid credential");
   });
 
-  it("verify login with invalid credential", () => {
+  it("Verify login with invalid credential", () => {
     cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field).type("aa");
@@ -25,7 +25,7 @@ describe("validate login functionality", () => {
     cy.log("login failed with invalid credential");
   });
 
-  it("verify login with empty credential", () => {
+  it("Vverify login with empty credential", () => {
     cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field);
@@ -35,7 +35,7 @@ describe("validate login functionality", () => {
     cy.log("username and password should not be empty");
   });
 
-  it("verify logout with valid user", () => {
+  it("Verify logout with valid user", () => {
     cy.xpath(loginSelector.enter_store).click();
     cy.xpath(loginSelector.sign_in).click();
     cy.get(loginSelector.username_field).type("aaa");

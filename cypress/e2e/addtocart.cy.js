@@ -11,6 +11,7 @@ describe("Add to cart functionality", () => {
       cy.log("passed " + this.currentTest.title);
     }
   });
+  
   it("Verify user should add aproduct to the cart", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();
@@ -72,6 +73,7 @@ describe("Add to cart functionality", () => {
 
     cy.get("body").should("contain.text", "EST-1");
   });
+
   it("Verify user handle neg product quantity", () => {
     cy.xpath(cartSelector.fish).click();
     cy.xpath(cartSelector.fishProduct).click();

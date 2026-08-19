@@ -34,6 +34,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout should not proceed with empty first name", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
@@ -55,6 +56,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout should not proceed with empty card number", () => {
     cy.get(checkout.cardtype).select("Visa");
 
@@ -74,6 +76,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout should not proceed with empty last name", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
@@ -95,6 +98,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout accepts alphabetic zip code", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
@@ -115,6 +119,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout should not proceed with empty address", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
@@ -132,6 +137,7 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+
   it("Verify checkout should not proceed with empty country", () => {
     cy.get(checkout.cardtype).select("Visa");
     cy.get(checkout.cardnumber).clear().type("999 9999 9999 9999");
@@ -149,4 +155,5 @@ describe("Jpetstore checkout functionality", () => {
       "Thank you, your order has been submitted",
     );
   });
+  
 });

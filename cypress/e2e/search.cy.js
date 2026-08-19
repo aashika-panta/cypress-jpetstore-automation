@@ -4,7 +4,7 @@ describe(" jpet store search functionality", () => {
     cy.visit("/");
     cy.xpath(loginSelector.enter_store).click();
   });
-  
+
   it("Verify search with valid keyword", () => {
     cy.get(searchs.search).type("Fish");
     cy.get(searchs.searchproduct).click();
@@ -77,4 +77,18 @@ describe(" jpet store search functionality", () => {
     cy.get("body").should("contain.text", "Goldfish");
     cy.get("body").should("contain.text", "Angelfish");
   });
+
+  it("Verify search result contains product information", () => {
+    cy.get(searchs.search).type("Fish");
+    cy.get(searchs.searchproduct).click();
+    cy.get("body").should("contain.text", "Goldfish");
+    cy.get("body").should("contain.text", "Angelfish");
+  });
+
+  it.only("Verify search with percentages %", () => {
+    cy.get(searchs.search).type("%");
+    cy.get(searchs.searchproduct).click();
+    cy.get("body").should("contain.text","Goldfish");
+  });
 });
+ 

@@ -62,5 +62,31 @@ export const checkout = {
 
 export const searchs = {
   search: "[name='keyword']",
-  searchproduct: "[name='searchProducts']"
+  searchproduct: "[name='searchProducts']",
+};
+export const account = {
+  myaccount: "//a[normalize-space()='My Account']",
+  myaccount: "//a[normalize-space()='My Account']",
+  firstName: '[name="account.firstName"]',
+  lastName: '[name="account.lastName"]',
+  email: '[name="account.email"]',
+  address1: '[name="account.address1"]',
+  Edit: '[name="editAccount"]',
+};
+export const Fish = {
+  fish: "//img[@src='../images/sm_fish.gif']",
+  fishProduct: "//a[normalize-space()='FI-SW-01']",
+  fishid: "//a[normalize-space()='EST-1']",
+};
+
+export const Dog = {
+  dog: "//img[@src='../images/sm_dogs.gif']",
+  dogProduct: "//a[normalize-space()='K9-BD-01']",
+  dogid: "//a[normalize-space()='EST-6']",
+};
+
+export const Bird = {
+  bird: "//img[@src='../images/sm_birds.gif']",
+  birdProduct: "//a[normalize-space()='AV-CB-01']",
+  birdid: "//a[normalize-space()='EST-18']",
 };

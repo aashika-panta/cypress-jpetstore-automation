@@ -7,9 +7,7 @@ describe("Registration functionality", () => {
   const username = `aashika_${Date.now().toString().slice(-4)}`;
 
   beforeEach(() => {
-    cy.visit(
-      "https://petstore.octoperf.com/actions/Account.action?newAccountForm=",
-    );
+    cy.visit("/actions/Account.action?newAccountForm=");
   });
 
   afterEach(function () {

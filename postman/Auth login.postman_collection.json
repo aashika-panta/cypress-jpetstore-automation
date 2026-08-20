@@ -1,0 +1,151 @@
+{
+  "info": {
+    "_postman_id": "2645b1ce-e779-4982-adfa-f329ae379688",
+    "name": "Auth login",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56957875"
+  },
+  "item": [
+    {
+      "name": "login auth",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"john@mail.com\",\r\n  \"password\": \"changeme\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/auth/login",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "retriving a user",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_0lez}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/auth/profile",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "refresh access token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"refreshToken\": \"{{json_web_token_0vz8}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/auth/refresh-token",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "refresh-token"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{auth_secret_0mqi}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_0mqi",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0lez",
+      "secret": true
+    }
+  ]
+}

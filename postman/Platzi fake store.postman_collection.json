@@ -1,0 +1,2219 @@
+{
+  "info": {
+    "_postman_id": "cc943db6-fd76-4490-92d6-5b4ec0e7b01a",
+    "name": "Platzi fake store",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56957875"
+  },
+  "item": [
+    {
+      "name": "search product by id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/9",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "9"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Post data",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"old jhghgh P hgghghg roduct\",\n  \"price\": 100000,\n  \"description\": \"A description\",\n  \"categoryId\": 1,\n  \"images\": [\"https://placehold.co/600x400\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Get product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search product by slug",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/slug/old-product",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "slug",
+            "old-product"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search by empty slug",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/slug/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "slug",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search by invalid slug",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/slug/abcd123",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "slug",
+            "abcd123"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create a product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Productss n mnbnbn vvgssess jhjhjgjhs\",\r\n  \"price\": 100000,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update a product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Prodldddddddddddddjdbfbdfvbdbvdwekjdwe\",\r\n  \"price\": 1000340,\r\n  \"description\": \"A descriptioee n\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/20",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalid product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Produuuuuuuuuuuuct\",\r\n  \"price\": 10000\r\n \r\n}"
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/1000000000",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/49",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "49"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "product id as string",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/abc",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "product id as negative num",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}products/-2",
+          "host": [
+            "{{BASE_URL}}products"
+          ],
+          "path": [
+            "-2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product with empty title",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \" \",\r\n  \"price\": 10,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}products/",
+          "host": [
+            "{{BASE_URL}}products"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product with negative price",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"products \",\r\n  \"price\": -100000,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}products/",
+          "host": [
+            "{{BASE_URL}}products"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "price as string",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"products \",\r\n  \"price\": abcdefgh,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}products/",
+          "host": [
+            "{{BASE_URL}}products"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get by catagories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "single categories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories/99",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            "99"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update non existing product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Product\",\r\n  \"price\": 10000000,\r\n  \"description\": \"A description\",\r\n  \"categoryId\": 1,\r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/10000000000",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "10000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create a categoroies",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"New Categ jhjhghforiesssssss  nbnvbvb jjjh\",\r\n  \"image\": \"https://placeimg.com/640/480/any\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "error product name",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 500\", function () {\r",
+              "    pm.response.to.have.status(500);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}products/",
+          "host": [
+            "{{BASE_URL}}products"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "cannot patcg",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"NewProductssss\",\r\n  \"price\": 1000000000\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/612",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "612"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/78",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "78"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "invalid id delete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/10000000000000000000",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "10000000000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "neg id delete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/-1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "-1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "invalid endpoint",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {\r",
+              "    pm.response.to.have.status(404);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/product/15",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "product",
+            "15"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete string id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/abc",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "abc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "missing field",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"NeProduct\",\r\n\r\n  \"description\": \"A description\",\r\n  \r\n  \"images\": [\"https://placehold.co/600x400\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/20",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "20"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "empty body",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 500\", function () {\r",
+              "    pm.response.to.have.status(500);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/22",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "22"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "filter productby title",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?id=11",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "11"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filter by title",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?title=Generic",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Generic"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filter by price",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?price=100",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "price",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filter by price range",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "filter by catagories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?categoryId=1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filter by slug",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?categorySlug=clothes",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categorySlug",
+              "value": "clothes"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "multiple filter",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?title=Generic&price_min=900&price_max=1000&categoryId=19",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Generic"
+            },
+            {
+              "key": "price_min",
+              "value": "900"
+            },
+            {
+              "key": "price_max",
+              "value": "1000"
+            },
+            {
+              "key": "categoryId",
+              "value": "19"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "filter by pricerange and limit",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/products/?price_min=100&price_max=1000&limit=10&offset=10",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            ""
+          ],
+          "query": [
+            {
+              "key": "price_min",
+              "value": "100"
+            },
+            {
+              "key": "price_max",
+              "value": "1000"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "offset",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get categories by slug",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories/slug/clothes",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            "slug",
+            "clothes"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "get categories by slug",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api.escuelajs.co/api/v1/categories/slug/clothes",
+              "protocol": "https",
+              "host": [
+                "api",
+                "escuelajs",
+                "co"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories",
+                "slug",
+                "clothes"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-security-policy",
+              "value": "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;img-src 'self' data: https://cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "cross-origin-opener-policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "cross-origin-resource-policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 29 Jul 2026 12:19:52 GMT"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"a4-FfDYtMQzP1Ii4Tma5xbfARpvCV4\""
+            },
+            {
+              "key": "nel",
+              "value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+            },
+            {
+              "key": "origin-agent-cluster",
+              "value": "?1"
+            },
+            {
+              "key": "referrer-policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "report-to",
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=Y9bhGztt7JhYFevw2FVpXLNJTOCKWIvrmPUQjSHiIlQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1785327592\"}],\"max_age\":3600}"
+            },
+            {
+              "key": "reporting-endpoints",
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=Y9bhGztt7JhYFevw2FVpXLNJTOCKWIvrmPUQjSHiIlQ%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1785327592\""
+            },
+            {
+              "key": "server",
+              "value": "Heroku"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "via",
+              "value": "2.0 heroku-router"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-dns-prefetch-control",
+              "value": "off"
+            },
+            {
+              "key": "x-download-options",
+              "value": "noopen"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "x-permitted-cross-domain-policies",
+              "value": "none"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "content-length",
+              "value": "164"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"name\": \"Clothes\",\n    \"slug\": \"clothes\",\n    \"image\": \"https://i.imgur.com/QkIa5tT.jpeg\",\n    \"creationAt\": \"2026-07-29T11:07:34.000Z\",\n    \"updatedAt\": \"2026-07-29T11:07:34.000Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "update a category",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "delete category",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories/89",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            "89"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getallproby categories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/categories/39/products",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categories",
+            "39",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get product by users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/users",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get single users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/users/1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create a users",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Nicolas\",\r\n  \"email\": \"nico@gmail.com\",\r\n  \"password\": \"1234\",\r\n  \"avatar\": \"https://picsum.photos/800\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/users/",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update a user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"john@mail.com\",\r\n  \"name\": \"Change name\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/users/8",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check email",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"john@mail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/users/is-available",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "users",
+            "is-available"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all location",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/locations",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "locations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get location by origin",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "locations"
+          ],
+          "query": [
+            {
+              "key": "origin",
+              "value": "6.2071641,-75.5720321"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get location with a limit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/locations?size=10",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "locations"
+          ],
+          "query": [
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get location within a radius",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/locations?origin=6.2071641,-75.5720321&radius=10",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "locations"
+          ],
+          "query": [
+            {
+              "key": "origin",
+              "value": "6.2071641,-75.5720321"
+            },
+            {
+              "key": "radius",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "upload file",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "8a7a0217-6a8f-4caa-82b4-a48b0ed073c9",
+              "src": "postman-cloud:///1f18c0b1-ad10-41b0-b986-5d4632d98781"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/files/upload",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "files",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get a file",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/files/8d1f.png",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "files",
+            "8d1f.png"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "empty image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/files/upload",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "files",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "multiple file",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "dc4ea8bf-432f-4370-98b2-d5ba127ee619",
+              "src": "postman-cloud:///1f18c0b1-ad10-41b0-b986-5d4632d98781"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://api.escuelajs.co/api/v1/files/upload",
+          "protocol": "https",
+          "host": [
+            "api",
+            "escuelajs",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "files",
+            "upload"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": ""
+    },
+    {
+      "key": "auth_secret_0mx5",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0vz8",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0mx5",
+      "secret": true
+    }
+  ]
+}

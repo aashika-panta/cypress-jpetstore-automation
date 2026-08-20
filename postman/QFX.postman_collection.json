@@ -1,0 +1,464 @@
+{
+  "info": {
+    "_postman_id": "d6e59617-49be-4a21-b60b-0c1d1c4bb288",
+    "name": "QFX",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56957875"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/movie-shows/697?fromDate=2026-08-01&city_id=1160",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "movie-shows",
+            "697"
+          ],
+          "query": [
+            {
+              "key": "fromDate",
+              "value": "2026-08-01"
+            },
+            {
+              "key": "city_id",
+              "value": "1160"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get my cinema translation",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get countries list",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get city banners",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/banners?city_id=1160",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "banners"
+          ],
+          "query": [
+            {
+              "key": "city_id",
+              "value": "1160"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get movie shows",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/movie-shows/704",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "movie-shows",
+            "704"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get movie show by date",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/movie-shows/704?fromDate=2026-08-03",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "movie-shows",
+            "704"
+          ],
+          "query": [
+            {
+              "key": "fromDate",
+              "value": "2026-08-03"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get cinema list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/cinemas",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "cinemas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "movie details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/movie-details/704/1/",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "movie-details",
+            "704",
+            "1",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "now showing movies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/now-showing-movies?city_id=1160",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "now-showing-movies"
+          ],
+          "query": [
+            {
+              "key": "city_id",
+              "value": "1160"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "next week movies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/available-movie-shows/?start_date=2026-08-10&cinema_id=9&city_id=1160",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "available-movie-shows",
+            ""
+          ],
+          "query": [
+            {
+              "key": "start_date",
+              "value": "2026-08-10"
+            },
+            {
+              "key": "cinema_id",
+              "value": "9"
+            },
+            {
+              "key": "city_id",
+              "value": "1160"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Schedule Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/schedule-details/181391",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "schedule-details",
+            "181391"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get seat type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/seat-types/19",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "seat-types",
+            "19"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get currency by id",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "coming soon movies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/coming-soon-movies?limit=1000&currentPage=1&rtk=true",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "coming-soon-movies"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "1000"
+            },
+            {
+              "key": "currentPage",
+              "value": "1"
+            },
+            {
+              "key": "rtk",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get show by date and city",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/movie-shows/588?fromDate=2026-08-03&city_id=29790",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "movie-shows",
+            "588"
+          ],
+          "query": [
+            {
+              "key": "fromDate",
+              "value": "2026-08-03"
+            },
+            {
+              "key": "city_id",
+              "value": "29790"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get food n bev",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/fnb-items",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "fnb-items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lounger seat",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/seat-types/51",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "seat-types",
+            "51"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Release Seat Realtime",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://web-api.qfxcinemas.com/api/v3/external/release-seat-realtime",
+          "protocol": "https",
+          "host": [
+            "web-api",
+            "qfxcinemas",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v3",
+            "external",
+            "release-seat-realtime"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

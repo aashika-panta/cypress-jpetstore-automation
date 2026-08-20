@@ -85,7 +85,7 @@ describe(" jpet store search functionality", () => {
     cy.get("body").should("contain.text", "Angelfish");
   });
 
-  it.only("Verify search with percentages %", () => {
+  it("Verify search with percentages %", () => {
     cy.get(searchs.search).type("%");
     cy.get(searchs.searchproduct).click();
     cy.get("body").should("contain.text","Goldfish");

@@ -3,10 +3,13 @@ name: Cypress Tests
 on:
   schedule:
     - cron: "15 13 * * *"
+
   workflow_dispatch:
+
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
@@ -14,6 +17,11 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-latest
+
+    env:
+      CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
+      CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
+      CYPRESS_BASEURL: ${{ secrets.CYPRESS_BASEURL }}
 
     steps:
       - uses: actions/checkout@v4

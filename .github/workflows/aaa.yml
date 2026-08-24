@@ -2,8 +2,7 @@ name: Cypress Tests
 
 on:
   schedule:
-    # Runs every day at 8:00 AM Nepal time
-    - cron: "15 2 * * *"
+    - cron: "15 13 * * *"
 
   workflow_dispatch:
 

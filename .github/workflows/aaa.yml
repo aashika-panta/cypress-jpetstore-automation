@@ -34,6 +34,6 @@ jobs:
         run: npx cypress run
         continue-on-error: true
         env:
-          CYPRESS_BASEURL: ${{ secrets.CYPRESS_BASE_URL }}
+          CYPRESS_BASEURL: ${{ secrets.CYPRESS_BASEURL }}
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}

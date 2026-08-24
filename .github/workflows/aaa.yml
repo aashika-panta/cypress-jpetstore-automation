@@ -34,5 +34,6 @@ jobs:
         run: npx cypress run
         continue-on-error: true
         env:
+          CYPRESS_baseUrl: https://petstore.octoperf.com
           CYPRESS_USERNAME: ${{ secrets.CYPRESS_USERNAME }}
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
